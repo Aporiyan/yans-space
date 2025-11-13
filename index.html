@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yan's Space</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="background-overlay"></div>
+    
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2>Yan's Space</h2>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="#" class="nav-link active" data-page="home">
+                        <i class="fas fa-home"></i>
+                        <span>首页</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link" data-page="tools">
+                        <i class="fas fa-tools"></i>
+                        <span>小工具</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link" data-page="articles">
+                        <i class="fas fa-book"></i>
+                        <span>文章集</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link" data-page="links">
+                        <i class="fas fa-link"></i>
+                        <span>链接收藏</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link" data-page="files">
+                        <i class="fas fa-folder"></i>
+                        <span>文件分享</span>
+                    </a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 主要内容区域 -->
+    <main class="main-content">
+        <!-- 首页 -->
+        <section id="home" class="page active">
+            <div class="hero-section">
+                <div class="hero-content">
+                    <h1 class="hero-title">欢迎来到 Yan's Space</h1>
+                    <p class="hero-subtitle">在这里分享我的工具、想法和收藏</p>
+                    <div class="hero-buttons">
+                        <button class="btn btn-primary" data-page="tools">探索工具</button>
+                        <button class="btn btn-secondary" data-page="articles">阅读文章</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <h3>实用工具</h3>
+                    <p>收集和分享各种实用的小工具，提高工作效率</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-pen-fancy"></i>
+                    </div>
+                    <h3>文章分享</h3>
+                    <p>记录学习心得、技术总结和生活感悟</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-bookmark"></i>
+                    </div>
+                    <h3>精选链接</h3>
+                    <p>整理有价值的网站和资源链接</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-cloud-download-alt"></i>
+                    </div>
+                    <h3>文件分享</h3>
+                    <p>分享有用的文档、模板和资源文件</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 小工具页面 -->
+        <section id="tools" class="page">
+            <div class="page-header">
+                <h1>实用小工具</h1>
+                <p>收集的各种实用工具，让工作更高效</p>
+            </div>
+            <div class="tools-grid">
+                <div class="tool-card">
+                    <div class="tool-header">
+                        <i class="fas fa-palette"></i>
+                        <h3>颜色选择器</h3>
+                    </div>
+                    <p>快速选择和转换颜色格式</p>
+                    <div class="tool-demo">
+                        <input type="color" id="colorPicker" value="#9b7cb6">
+                        <div class="color-info">
+                            <span id="hexValue">#9b7cb6</span>
+                            <span id="rgbValue">rgb(155, 124, 182)</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="tool-card">
+                    <div class="tool-header">
+                        <i class="fas fa-calculator"></i>
+                        <h3>单位转换器</h3>
+                    </div>
+                    <p>常用单位快速转换</p>
+                    <div class="tool-demo">
+                        <div class="converter">
+                            <input type="number" id="pxInput" placeholder="像素值" value="16">
+                            <span>=</span>
+                            <span id="remOutput">1rem</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="tool-card">
+                    <div class="tool-header">
+                        <i class="fas fa-clock"></i>
+                        <h3>时间戳转换</h3>
+                    </div>
+                    <p>时间戳与日期格式互转</p>
+                    <div class="tool-demo">
+                        <input type="datetime-local" id="dateInput">
+                        <div class="timestamp-result">
+                            <span id="timestampOutput">--</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="tool-card">
+                    <div class="tool-header">
+                        <i class="fas fa-code"></i>
+                        <h3>JSON 格式化</h3>
+                    </div>
+                    <p>JSON 数据格式化和验证</p>
+                    <div class="tool-demo">
+                        <textarea id="jsonInput" placeholder='{"key": "value"}'></textarea>
+                        <button class="btn btn-small" onclick="formatJSON()">格式化</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 文章页面 -->
+        <section id="articles" class="page">
+            <div class="page-header">
+                <h1>文章集</h1>
+                <p>记录学习心得和生活感悟</p>
+            </div>
+            <div class="articles-list" id="articles-container">
+                <!-- 文章将通过 JavaScript 动态加载 -->
+            </div>
+        </section>
+
+        <!-- 文章查看页面 -->
+        <section id="article-view" class="page">
+            <div class="article-viewer">
+                <button class="btn btn-secondary back-btn" id="back-to-articles">
+                    <i class="fas fa-arrow-left"></i> 返回文章列表
+                </button>
+                <div class="article-content" id="article-content">
+                    <!-- 文章内容将在这里显示 -->
+                </div>
+            </div>
+        </section>
+
+        <!-- 链接收藏页面 -->
+        <section id="links" class="page">
+            <div class="page-header">
+                <h1>链接收藏</h1>
+                <p>精选的有价值网站和资源</p>
+            </div>
+            <div class="links-categories">
+                <div class="category-section">
+                    <h3>开发工具</h3>
+                    <div class="links-grid">
+                        <a href="https://github.com" class="link-card" target="_blank">
+                            <div class="link-icon">
+                                <i class="fab fa-github"></i>
+                            </div>
+                            <div class="link-info">
+                                <h4>GitHub</h4>
+                                <p>代码托管和协作平台</p>
+                            </div>
+                        </a>
+                        <a href="https://codepen.io" class="link-card" target="_blank">
+                            <div class="link-icon">
+                                <i class="fab fa-codepen"></i>
+                            </div>
+                            <div class="link-info">
+                                <h4>CodePen</h4>
+                                <p>在线代码编辑器</p>
+                            </div>
+                        </a>
+                        <a href="https://figma.com" class="link-card" target="_blank">
+                            <div class="link-icon">
+                                <i class="fab fa-figma"></i>
+                            </div>
+                            <div class="link-info">
+                                <h4>Figma</h4>
+                                <p>协作设计工具</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="category-section">
+                    <h3>学习资源</h3>
+                    <div class="links-grid">
+                        <a href="https://developer.mozilla.org" class="link-card" target="_blank">
+                            <div class="link-icon">
+                                <i class="fab fa-firefox"></i>
+                            </div>
+                            <div class="link-info">
+                                <h4>MDN Web Docs</h4>
+                                <p>Web 开发文档</p>
+                            </div>
+                        </a>
+                        <a href="https://css-tricks.com" class="link-card" target="_blank">
+                            <div class="link-icon">
+                                <i class="fas fa-css3-alt"></i>
+                            </div>
+                            <div class="link-info">
+                                <h4>CSS-Tricks</h4>
+                                <p>CSS 技巧和教程</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 文件分享页面 -->
+        <section id="files" class="page">
+            <div class="page-header">
+                <h1>文件分享</h1>
+                <p>有用的文档、模板和资源文件</p>
+            </div>
+            <div class="files-grid">
+                <div class="file-card">
+                    <div class="file-icon">
+                        <i class="fas fa-file-pdf"></i>
+                    </div>
+                    <div class="file-info">
+                        <h4>前端开发规范.pdf</h4>
+                        <p>团队开发规范文档</p>
+                        <span class="file-size">2.3 MB</span>
+                    </div>
+                    <button class="btn btn-small">下载</button>
+                </div>
+                
+                <div class="file-card">
+                    <div class="file-icon">
+                        <i class="fas fa-file-code"></i>
+                    </div>
+                    <div class="file-info">
+                        <h4>项目模板.zip</h4>
+                        <p>前端项目初始化模板</p>
+                        <span class="file-size">1.8 MB</span>
+                    </div>
+                    <button class="btn btn-small">下载</button>
+                </div>
+                
+                <div class="file-card">
+                    <div class="file-icon">
+                        <i class="fas fa-file-image"></i>
+                    </div>
+                    <div class="file-info">
+                        <h4>设计素材包.zip</h4>
+                        <p>常用图标和素材</p>
+                        <span class="file-size">5.2 MB</span>
+                    </div>
+                    <button class="btn btn-small">下载</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
